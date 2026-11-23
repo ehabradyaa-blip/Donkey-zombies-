@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -q donkey-zombies-android.zip -d proj
+      - run: sed -i 's/SYSTEM_UI_FLAG_LAYOUT_FULL_SCREEN/SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN/' proj/app/src/main/java/com/donkey/zombies/MainActivity.java
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
